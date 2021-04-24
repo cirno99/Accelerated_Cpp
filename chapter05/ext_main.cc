@@ -1,12 +1,12 @@
 #include <algorithm>
-#include <vector>
 #include <iostream>
 #include <string>
+#include <vector>
 
 #include "Student_info.h"
 #include "grade.h"
 
-//driver program for grade partitioning examples
+// driver program for grade partitioning examples
 
 using std::cin;
 using std::cout;
@@ -21,24 +21,23 @@ using std::vector;
 using std::max;
 #endif
 
-vector<Student_info> extract_fails(vector<Student_info>& v);
+vector<Student_info> extract_fails(vector<Student_info> &v);
 
-int main()
-{
-        vector<Student_info> vs;
-        Student_info s;
-        string::size_type maxlen = 0;
-        while (read(cin, s)) {
-                maxlen = max(maxlen, s.name.size());
-                vs.push_back(s);
-        }
+int main() {
+  vector<Student_info> vs;
+  Student_info s;
+  string::size_type maxlen = 0;
+  while (read(cin, s)) {
+    maxlen = max(maxlen, s.name.size());
+    vs.push_back(s);
+  }
 
-        sort(vs.begin(), vs.end(), compare);
+  sort(vs.begin(), vs.end(), compare);
 
-	vector<Student_info> fails = extract_fails(vs);
+  vector<Student_info> fails = extract_fails(vs);
 
-	for (int i = 0; i < fails.size(); ++i)
-		cout << fails[i].name << " " << grade(fails[i]) << endl;
+  for (int i = 0; i < fails.size(); ++i)
+    cout << fails[i].name << " " << grade(fails[i]) << endl;
 
-	return 0;
+  return 0;
 }

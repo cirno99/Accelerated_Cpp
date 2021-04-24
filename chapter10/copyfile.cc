@@ -7,15 +7,13 @@ using std::ifstream;
 using std::ofstream;
 using std::string;
 
-int main()
-{
-	ifstream infile("in");
-	ofstream outfile("out");
+int main() {
+  ifstream infile("in");
+  ofstream outfile("out");
 
-	string s;
+  string s;
 
-	while (getline(infile, s))
-		outfile << s << endl;
-	return 0;
+  while (getline(infile, s))
+    outfile << s << endl;
+  return 0;
 }
-

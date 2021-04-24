@@ -7,18 +7,15 @@
 using std::stable_partition;
 using std::vector;
 
-vector<Student_info>
-extract_fails(vector<Student_info>& students)
-{
+vector<Student_info> extract_fails(vector<Student_info> &students) {
 #ifdef _MSC_VER
-	std::vector<Student_info>::iterator iter =
+  std::vector<Student_info>::iterator iter =
 #else
-	vector<Student_info>::iterator iter =
+  vector<Student_info>::iterator iter =
 #endif
-		stable_partition(students.begin(), students.end(), pgrade);
-	vector<Student_info> fail(iter, students.end());
-	students.erase(iter, students.end());
+      stable_partition(students.begin(), students.end(), pgrade);
+  vector<Student_info> fail(iter, students.end());
+  students.erase(iter, students.end());
 
-	return fail;
+  return fail;
 }
-
